@@ -3,7 +3,7 @@ import { Box, Skeleton } from "@chakra-ui/react"
 import AliceCarousel from "react-alice-carousel"
 import ProductCard from "../ProductCard/ProductCard"
 
-const Carousal = ({products}) => {
+const Carousal = ({products, addToCart}) => {
     const responsive = {
         0: { items: 1 },
         568: { items: 2 },
@@ -20,8 +20,9 @@ const Carousal = ({products}) => {
 
   return (
     <Box display={'flex'} overflowX={'auto'} margin={'0.5rem'}>
-    <AliceCarousel autoPlayInterval={2000} autoPlay  disableDotsControls={{base:true,lg:false}} responsive={responsive} mouseTracking items={  products.map((product)=>{
-   return <ProductCard product={product} key={product.id}/>
+        
+    <AliceCarousel autoPlayInterval={2000} autoPlay   disableDotsControls={{base:true,lg:false}} responsive={responsive} mouseTracking items={  products.map((product)=>{
+   return <ProductCard product={product} key={product.id} addToCart={addToCart}/>
   })} />
 
  

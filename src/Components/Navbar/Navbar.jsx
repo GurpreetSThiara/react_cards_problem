@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
 import { Box, Flex, Input, Text } from "@chakra-ui/react"
 
 import { IoMdSearch } from "react-icons/io";
-const Navbar = () => {
+import { FaCartShopping } from "react-icons/fa6";
+const Navbar = ({cart}) => {
   return (
     <Box w={'100vw'} h={'4rem'} backgroundColor={'#E5E5E5'} padding={'10px'} alignItems={'center'} display={'flex'} justifyContent={'space-between'} >
         
@@ -12,6 +14,10 @@ const Navbar = () => {
      <Box cursor={'pointer'}>
      <IoMdSearch size={24}/>
 
+     </Box>
+     <Box cursor={'pointer'} border={'1px solid gray'} px={'1rem'} py={'0.5rem'} borderRadius={'5px'} display={'flex'} alignItems={'center'} justifyContent={'space-between'}>
+        <FaCartShopping size={24}/>
+        <Text>{cart.length}</Text>
      </Box>
      </Flex>
     </Box>
